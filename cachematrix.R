@@ -1,7 +1,7 @@
-## The functions below cache the Inverse of a Matrix
-## The makeCacheMatrix and cacheSolve functions are used to create and matrix and cache its inverse.
+## The functions below caches the Inverse of a Matrix
+## The makeCacheMatrix and cacheSolve functions are used to create a matrix and cache its inverse.
 
-##This function creates a special "matrix" object that can cache its inverse.
+##The below function creates a special matrix object that can be used to cache its inverse.
 
 makeCacheMatrix <- function(x = matrix()) {
         inv <- NULL                        
@@ -16,8 +16,8 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## This function computes the inverse of the special "matrix" created by 
-## makeCacheMatrix above.
+## The below cacheSolve function computes the inverse of the special matrix created by the
+## makeCacheMatrix function above.
 
 cacheSolve <- function(x, ...) {
         inv <- x$getInverse()
@@ -30,6 +30,9 @@ cacheSolve <- function(x, ...) {
         x$setInverse(inv)
         inv
 }
+
+#Test that the function work properly
+
 qmatrix <- makeCacheMatrix(matrix(1:4,2,2))
 qmatrix$get()
 qmatrix$getInverse()
